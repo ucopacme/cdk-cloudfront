@@ -1,0 +1,6 @@
+{
+  "app": "python3 app.py",
+  "context": {
+    "spec-file": "./cloudtrail-spec.yaml"
+  }
+}

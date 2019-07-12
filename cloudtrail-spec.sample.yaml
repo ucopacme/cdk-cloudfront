@@ -1,0 +1,14 @@
+---
+#name:
+tags:
+- key: ucop:service
+  value: ait
+- key: ucop:application
+  value: awsinfrastructure
+- key: ucop:environment
+  value: test
+- key: app:source:code
+  value: https://github.com/ucopacme/cdk_cloudtrail.git
+- key: app:source:config
+  value:
+ 
