@@ -1,10 +1,10 @@
-A AWS-CDK project to build out cloudtrail periferal resources
+A AWS-CDK project to build out cloudtrail peripheral resources
 =============================================================
 
 Quick Start
 -----------
 
-ensure your node environnment is properly set up::
+ensure your node environment is properly set up::
 
   cdk-cloudtrail> nvm current
   v11.10.0
