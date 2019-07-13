@@ -35,6 +35,24 @@ Environment Setup
 nvm
 ***
 
+::
+
+  nvm current
+  nvm ls-remote | tail
+  nvm install stable
+  nvm install --latest-npm
+  nvm use stable
+  nvm current
+
+cdk
+***
+
+::
+
+  which cdk
+  npm install -g aws-cdk
+  npm update -g aws-cdk
+  cdk --version
 
 python
 ******

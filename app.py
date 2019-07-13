@@ -2,11 +2,11 @@
 
 import os
 import yaml
-from aws_cdk import cdk
+from aws_cdk import core
 from cdk_cloudtrail.cdk_cloudtrail_stack import CdkCloudTrailStack
 
 
-DEFAULT_SPEC_FILE = './cloudtrail_spec.yaml'
+DEFAULT_SPEC_FILE = './cloudtrail-spec.sample.yaml'
 
 
 def scan_spec_file(spec_file):
@@ -34,15 +34,22 @@ def scan_spec_file(spec_file):
 
 
 
-app = cdk.App()
+app = core.App()
 #print(app.node.__dir__())
-spec_file = app.node.get_context('spec-file')
-print(spec_file)
+spec_file = app.node.try_get_context('spec-file')
 cloudtrail_spec = scan_spec_file(spec_file)
-print(cloudtrail_spec)
+#print(spec_file)
+#print(cloudtrail_spec)
+#print(cloudtrail_spec['tags'])
 
-my_cloudtrail = CdkCloudTrailStack(app, "cdk-cloudtrail", **cloudtrail_spec)
-for tag in cloudtrail_spec['tags']:
-    my_cloudtrail.node.apply(cdk.Tag(tag['key'], tag['value']))
+my_cloudtrail = CdkCloudTrailStack(app, "cdk-cloudtrail", tags=cloudtrail_spec['tags'])
+app.synth()
 
-app.run()
+#for tag in cloudtrail_spec['tags']:
+#    print(tag)
+#    my_tag = core.Tag(tag['key'], tag['value'])
+#    print(my_tag.key)
+#    print(my_tag.value)
+#    #my_cloudtrail.node.apply_aspect(core.Tag(tag['key'], tag['value']))
+#    my_cloudtrail.tags(core.Tag(tag['key'], tag['value']))
+

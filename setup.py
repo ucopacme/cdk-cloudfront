@@ -20,7 +20,9 @@ setuptools.setup(
 
     install_requires=[
         "pyyaml",
-        "aws-cdk.cdk",
+        "aws-cdk.core",
+        "aws-cdk.aws_s3",
+        "aws-cdk.aws_cloudtrail",
     ],
 
     python_requires=">=3.6",
