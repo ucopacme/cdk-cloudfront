@@ -22,6 +22,7 @@ setuptools.setup(
         "pyyaml",
         "aws-cdk.core",
         "aws-cdk.aws_s3",
+        "aws-cdk.aws_sns",
         "aws-cdk.aws_cloudtrail",
     ],
 

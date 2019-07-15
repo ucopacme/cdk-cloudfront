@@ -2,4 +2,5 @@
 aws-cdk.core
 aws-cdk.aws_s3
 aws-cdk.aws_cloudtrail
+aws-cdk.aws_sns
 pyyaml
